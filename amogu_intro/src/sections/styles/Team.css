@@ -1,0 +1,28 @@
+.team-section {
+    padding: 50px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+  }
+  
+  .team-members {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .team-member {
+    text-align: center;
+  }
+  
+  .team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .team-member h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+  

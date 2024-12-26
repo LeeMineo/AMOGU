@@ -1,0 +1,16 @@
+.tech-section {
+    padding: 50px 20px;
+    background-color: #ffffff;
+    text-align: center;
+  }
+  
+  .tech-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .tech-section p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  

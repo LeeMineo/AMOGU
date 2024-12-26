@@ -1,0 +1,54 @@
+/* 텍스트 섹션 스타일 */
+.start-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5vw 3vw;
+  margin-top: 70px; /* 헤더 높이만큼 여백 */
+  box-sizing: border-box;
+}
+
+.text-container {
+  width: 100%;
+  text-align: left; /* 텍스트 왼쪽 정렬 */
+  margin-bottom: 20px;
+}
+
+.text-container h1 {
+  font-size: 16vw;
+  font-weight: 900;
+  margin-bottom: 0;
+}
+
+.text-container p {
+  font-size: 1.5vw;
+  line-height: 1.6;
+  color: #333;
+  margin-top: 0;
+}
+
+.text-container p strong {
+  font-weight: bold;
+  color: black;
+}
+
+/* 이미지 섹션 스타일 */
+.image-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.image-container {
+  width: 100%; /* 부모 컨테이너의 너비를 채움 */
+  overflow: hidden; /* 필요 없는 여백을 숨김 */
+}
+
+.start-image {
+  width: 100%; /* 이미지가 항상 화면의 너비에 맞게 조정 */
+  height: auto; /* 이미지의 세로 비율을 유지 */
+  display: block;
+}
