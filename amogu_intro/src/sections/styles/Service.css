@@ -1,26 +1,98 @@
 .service-section {
-    padding: 50px 20px;
-    background-color: #f8f9fa;
-  }
-  
-  .service-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .service-cards {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  .service-card {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    flex: 1;
-  }
-  
+  background-color: white;
+  padding: 50px 20px;
+  text-align: center;
+  color: #333;
+}
+
+.service-title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.service-title strong {
+  font-weight: bold;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.service-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #fff;
+  text-align: left;
+  min-width: 100%; /* 각 카드가 화면 전체 너비 차지 */
+  box-sizing: border-box;
+}
+
+.service-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* 라인의 고정 너비 */
+  height: 100%; /* 콘텐츠 높이에 맞게 확장 */
+}
+
+.service-line img {
+  width: 2px; /* 라인의 굵기 */
+  height: 100%;
+  background-color: #8C8C8C;
+}
+
+.service-card-contents {
+  flex: 1;
+}
+
+.service-title-small {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.service-title-large {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.service-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 5px 0;
+}
+
+.read-more {
+  font-size: 0.9rem;
+  color: #555;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* 인디케이터 스타일 */
+.indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+  background-color: #000;
+}
