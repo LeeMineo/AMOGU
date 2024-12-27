@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="footer">
       <p>© 2024 AMOGU. All Rights Reserved.</p>
-      <div className="social-links">
+      {/* <div className="social-links">
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
           Facebook
         </a>
@@ -15,7 +15,7 @@ function Footer() {
         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
           Instagram
         </a>
-      </div>
+      </div> */}
     </footer>
   );
 }

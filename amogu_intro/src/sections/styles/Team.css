@@ -1,28 +1,63 @@
 .team-section {
-    padding: 50px 20px;
-    background-color: #f8f9fa;
-    text-align: center;
-  }
-  
-  .team-members {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  .team-member {
-    text-align: center;
-  }
-  
-  .team-member img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .team-member h3 {
-    margin-top: 10px;
-    font-size: 1.2rem;
-  }
-  
+  padding: 50px 20px;
+  text-align: center;
+  background-color: white;
+}
+
+.team-title {
+  font-size: 2vw;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.team-title strong {
+  font-weight: bold;
+  color: #000; /* 강조 색상 */
+}
+
+.team-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap; /* 작은 화면에서도 카드가 줄바꿈되도록 설정 */
+}
+
+.team-card {
+  width: 300px;
+  padding: 20px;
+  /* background-color: #f9f9f9; */
+  border-radius: 10px;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.team-image {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+
+.team-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.team-role {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.team-description {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
