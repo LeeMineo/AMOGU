@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './styles/Service.css';
 
 const serviceData = [
@@ -31,18 +31,48 @@ const serviceData = [
 
 function Service() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const titleRef = useRef();
 
-  // 자동 슬라이드 기능
+  // 자동 슬라이드
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % serviceData.length);
-    }, 5000); // 5초 간격
+    }, 5000);
     return () => clearInterval(interval);
+  }, []);
+
+  // 인디케이터 클릭 시 이동
+  const handleIndicatorClick = (index) => {
+    setCurrentIndex(index);
+  };
+
+  // Title 애니메이션
+  useEffect(() => {
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show'); // 다시 초기화
+        }
+      });
+    };
+
+    const observerOptions = {
+      threshold: 0.1, // 10% 보이면 실행
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    if (titleRef.current) {
+      observer.observe(titleRef.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
   return (
     <section id="service" className="service-section">
-      <h2 className="service-title">
+      <h2 className="service-title" ref={titleRef}>
         모델 지원부터 모델 구인까지, <strong>복잡한 절차 없이 간편하게</strong> 이용할 수 있는 올인원 플랫폼입니다.
       </h2>
       <div className="carousel" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
@@ -66,6 +96,7 @@ function Service() {
           <span
             key={index}
             className={`indicator ${index === currentIndex ? "active" : ""}`}
+            onClick={() => handleIndicatorClick(index)}
           ></span>
         ))}
       </div>

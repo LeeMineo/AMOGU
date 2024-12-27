@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './styles/Tech.css';
 
 const techData = [
@@ -29,9 +29,34 @@ const techData = [
 ];
 
 function Tech() {
+  const titleRef = useRef();
+
+  useEffect(() => {
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show'); // 뷰포트에서 벗어나면 클래스 제거
+        }
+      });
+    };
+
+    const observerOptions = {
+      threshold: 0.1, // 10% 이상 보이면 실행
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    if (titleRef.current) {
+      observer.observe(titleRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="tech" className="tech-section">
-      <h2 className="tech-title">
+      <h2 className="tech-title" ref={titleRef}>
         <strong>AI 기술</strong>과 <strong>인증 시스템</strong>을 통해 모델과 기업 간 <strong>신뢰할 수 있는 매칭 서비스</strong>를 제공합니다.
       </h2>
       <div className="tech-grid">

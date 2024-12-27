@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './styles/Team.css';
 
 const teamData = [
@@ -23,9 +23,36 @@ const teamData = [
 ];
 
 function Team() {
+  const titleRef = useRef();
+
+  useEffect(() => {
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show'); // 다시 초기화
+        }
+      });
+    };
+
+    const observerOptions = {
+      threshold: 0.1, // 10% 이상 보이면 실행
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    if (titleRef.current) {
+      observer.observe(titleRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="team" className="team-section">
-      <h2 className="team-title">우리팀은 항상 사용자들의 <strong>편리성</strong>을 생각합니다.</h2>
+      <h2 className="team-title" ref={titleRef}>
+        우리팀은 항상 사용자들의 <strong>편리성</strong>을 생각합니다.
+      </h2>
       <div className="team-container">
         {teamData.map((member, index) => (
           <div className="team-card" key={index}>
