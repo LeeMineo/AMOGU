@@ -1,20 +1,55 @@
 .value-section {
-    padding: 50px 20px;
-    background-color: #ffffff;
-  }
-  
-  .value-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .value-section ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .value-section li {
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-  }
-  
+  background-color: black;
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.value-title {
+  font-size: 2vw;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.value-title strong {
+  font-weight: bold;
+  color: #fff;
+}
+
+.value-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.value-item {
+  text-align: center;
+  padding: 20px;
+}
+
+.value-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.value-item h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.value-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 5px 0;
+}
+
+.value-divider {
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+  display: block;
+}
